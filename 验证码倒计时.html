@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<button type="button" class="mui-btn mui-btn-block" id="send">发送验证码</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var times = 60,
+    		timer = null;
+			$('#send').on('click', function () {
+			    var $this = $(this);
+			    // 计时开始
+			    timer = setInterval(function () {
+			        times--;
+			        if (times <= 0) {
+			            $this.text('发送验证码');
+			            clearInterval(timer);
+			            $this.attr('disabled', false);
+			            times = 60;
+			        } else {
+			            $this.text(times + '秒后重试');
+			            $this.attr('disabled', true);
+			        }
+			    }, 1000);
+			});
+ 
+		</script>
+	</body>
+
+</html>

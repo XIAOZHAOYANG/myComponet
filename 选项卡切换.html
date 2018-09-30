@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			//实现div显示与隐藏的效果
+			function showDetails(name,cursel,n){
+				for(var i = 1; i < n; i++)(
+					if(cursel == i){
+						//变淡绿色
+						$("#"+name+cursel+"").css("background-color","#00DD77");
+						$("#con_"+name+"_"+cursel+"").show();
+					}
+				)
+			}
+		</script>
+	</body>
+
+</html>
