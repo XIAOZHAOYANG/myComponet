@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<style>
+			/*loading加载动画*/
+			#load,
+			#load-wrap {
+			    position: absolute;
+			    top: 0;
+			    z-index: 10;
+			    width: 100%;
+			    height: 100%;
+			    text-align: center;
+			    background-color: white;
+			}
+			.spinner {
+			    width: 60px;
+			    height: 60px;
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    bottom: 0;
+			    right: 0;
+			    margin: auto;
+			}
+			
+			.double-bounce1,
+			.double-bounce2 {
+			    width: 100%;
+			    height: 100%;
+			    border-radius: 50%;
+			    background-color: #ec291b;
+			    opacity: 0.6;
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+			    -webkit-animation: bounce 2.0s infinite ease-in-out;
+			    animation: bounce 2.0s infinite ease-in-out;
+			}
+			
+			.double-bounce2 {
+			    -webkit-animation-delay: -1.0s;
+			    animation-delay: -1.0s;
+			}
+			
+			@-webkit-keyframes bounce {
+			    0%,
+			    100% {
+			        -webkit-transform: scale(0.0)
+			    }
+			    50% {
+			        -webkit-transform: scale(1.0)
+			    }
+			}
+			
+			@keyframes bounce {
+			    0%,
+			    100% {
+			        transform: scale(0.0);
+			        -webkit-transform: scale(0.0);
+			    }
+			    50% {
+			        transform: scale(1.0);
+			        -webkit-transform: scale(1.0);
+			    }
+			}
+		</style>
+	</head>
+	<body>
+		<!--loading-->
+	    <div id="load-wrap">
+	        <div class="spinner">
+	            <div class="double-bounce1"></div>
+	            <div class="double-bounce2"></div>
+	        </div>
+	    </div>
+	</body>
+</html>
