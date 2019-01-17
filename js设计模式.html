@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js设计模式</title>
+	</head>
+	<body>
+		
+		<script>
+			
+			//使用设计模式的因素：可维护性（降低耦合度）、沟通、性能
+			//接口
+			//模仿接口的三种方法：注释法、属性检测法、鸭式辨型法
+			//1.注释法：使用注释说明
+			
+			//2.属性检测法
+			 
+			//3.鸭式辨型法
+			 			
+			//作用域、嵌套函数和闭包
+			function getOne(endCount,num){
+				var oneCount = 0;
+				for(var i = 0; i <= endCount; i++){
+					var numArr = (""+i).split("");
+					for(var j = 0; j < numArr.length; j++){
+						if(numArr[j] == num){
+							oneCount++;
+						}
+					}
+				}
+				return "0到"+endCount+"一共有"+oneCount+"个"+num;
+			}
+			console.log(getOne(4000,1)); 
+			function getSort(arr){
+				if(arr instanceof Array){
+					for(var i = 0; i < arr.length; i++){
+						for(var j = i+1; j < arr.length; j++){
+							if(arr[i] > arr[j]){
+								var max = arr[i];
+								arr[i] = arr[j];
+								arr[j] = max;
+							}
+						}
+					}
+					return arr;
+				}else{
+					alert("请传入数组");
+				}
+			}
+			
+			console.log(getSort([343,12,45,2,534,2,43,221,1]))
+		</script>
+		
+	</body>
+</html>

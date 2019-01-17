@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>二维码/条形码</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		
+		<style type="text/css">
+			body,.mui-content{
+				background:#fff;
+				
+			}
+			.barcode{
+				text-align: center;
+				padding-top:20px;
+			}
+			.barcode #jsbarcode{
+				width:80%;
+				height:50px;
+			}
+			#qrcode{
+				text-align: center;
+				padding:30px 0;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--一维码  条形码-->
+		<div class="barcode">
+			<canvas id="jsbarcode"></canvas>
+		</div>
+		<!--二维码-->
+		<div id="qrcode">
+			    
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.qrcode.min.js"></script>
+		<script src="js/JsBarcode.all.min.js"></script>
+		<script>
+			var arr = "2018-12-05 13:49:56".split(" ");
+			alert(arr[0]);
+			alert("2018-12-05 13:49:56".substring(0,11));
+			//二维码
+			$(function(){
+			    $('#qrcode').qrcode("<p style='color:red;'>this is a paragraph</p>");
+			    setTimeout(function(){
+			    	 $('#qrcode').empty();
+			    },3000);
+			    setTimeout(function(){
+			    	$('#qrcode').qrcode("<p style='color:red;'>this is a paragraph</p>");
+			    },4000);
+			});
+			JsBarcode("#jsbarcode","11213131",{
+				displayValue:"false"
+			});
+//			JsBarcode("#imgcode", "123", {
+//				 format: "CODE39",//选择要使用的条形码类型
+//				 width:3,//设置条之间的宽度
+//				 height:100,//高度
+//				 displayValue:true,//是否在条形码下方显示文字
+//				 text:"456",//覆盖显示的文本
+//				 fontOptions:"bold italic",//使文字加粗体或变斜体
+//				 font:"fantasy",//设置文本的字体
+//				 textAlign:"left",//设置文本的水平对齐方式
+//				 textPosition:"top",//设置文本的垂直位置
+//				 textMargin:5,//设置条形码和文本之间的间距
+//				 fontSize:15,//设置文本的大小
+//				 background:"#eee",//设置条形码的背景
+//				 lineColor:"#2196f3",//设置条和文本的颜色。
+//				 margin:15//设置条形码周围的空白边距
+//			});
+			
+		</script>
+	</body>
+
+</html>

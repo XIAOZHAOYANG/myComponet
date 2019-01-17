@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>echo图片懒加载</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<!---->
+		<img class="lazy" src="img/waiting.png" onerror="this.src='img/waiting'" data-echo="img/sinaweibo.png"/>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/echo.js"></script>
+		<script type="text/javascript">
+			Echo.init({
+				offset: 0,
+    			throttle: 0 
+			});
+		</script>
+	</body>
+
+</html>
