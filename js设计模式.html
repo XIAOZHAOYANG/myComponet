@@ -35,7 +35,7 @@
 				if(arr instanceof Array){
 					for(var i = 0; i < arr.length; i++){
 						for(var j = i+1; j < arr.length; j++){
-							if(arr[i] > arr[j]){
+							if(arr[i] > arr[j]){//arr[i] > arr[j] 从小到大排序   arr[i] < arr[j]从大到小排序
 								var max = arr[i];
 								arr[i] = arr[j];
 								arr[j] = max;
@@ -48,7 +48,46 @@
 				}
 			}
 			
-			console.log(getSort([343,12,45,2,534,2,43,221,1]))
+			console.log(getSort([343,12,45,2,534,2,43,221,1]));
+			(function(){
+				//赋值是从右往左的
+				var a=b=5;//相当于 var a = (b=5);  这里的b是全局变量
+				console.log(typeof a);
+				console.log(typeof b);
+			})();
+			console.log(typeof a);
+			console.log(typeof b);
+			
+			var iNum = 0;
+			for(var i = 1; i< 10; i++){
+				if(i % 5 == 0){
+					continue;
+				}
+				iNum++;
+			}
+			
+			
+			//栈
+			function Statck(){
+				var item = [];
+				//增加
+				this.push = function(value){
+					item.push(item);
+				}
+			}
+			//队列
+			
+			//链表
+			function LinkedList(){
+				var Node = function(element){
+					this.element = element;
+					this.next = null;
+				};
+				var length = 0;
+				var head = null;
+				console.log("nothing is too difficult if you put your heart into it!")
+				
+			}
 		</script>
 		
 	</body>
