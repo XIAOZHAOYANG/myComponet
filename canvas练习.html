@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习</title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+	</head>
+	<body>
+		<div class="mui-content">
+		   	<canvas id="mycanva" style="display: block;width:100%;height:300px;">nothignf</canvas>
+		</div>
+		
+		<script type="text/javascript">
+			var mycan = document.getElementById("mycanva");
+			console.log(mycan.getContext)
+			if(mycan.getContext){
+				var context = mycan.getContext("2d");
+				context.strokeStyle = "red";
+				context.fillStyle = "#007AFF";
+			}
+			var num = 0;
+			
+			console.log(typeof num)
+			if(typeof num == "number"){
+				console.log("跨域资源共享跨域资源共享");
+				console.log("nothing is too difficult if you put your heart it");
+				
+			}
+		</script>
+	</body>
+</html>

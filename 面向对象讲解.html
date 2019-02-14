@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a:link{
+				color: red;
+			}
+			a:visited{
+				color: orange;
+			}
+			a:hover{
+				color: yellow;
+			}
+			a:active{
+				color: green;
+			}
+			#div1{
+				width: 200px;
+				height: 200px;
+				background-color: #6699FF;
+				margin:auto;
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div style="height: 300px;">
+			
+		<img style="width:100%;" src="images/pic_zwjxhd@3x.png"/>
+		</div>-->
+		
+		<!--同源策略：协议、域名、端口-->
+		
+		
+		
+		<!--<a href="#">字体颜色改变</a>
+		<p>213123</p>		
+		<p style="letter-spacing:normal;">kjskdf</p>
+		
+		
+		<div id="div1">
+			12312
+		</div>-->
+		
+		<script type="text/javascript">
+			//1.数组去重
+			function deleteRepeat(arr){
+				for(var i = 0; i < arr.length; i++){
+					if(arr.indexOf(arr[i]) !== i){
+						arr.splice(i,1);
+						i--;
+					}
+				}
+				return arr;
+			}
+			console.log(deleteRepeat([1,2,3,23,23,2,3,23,1,123]));	
+			
+			console.log("get-element-by-id".split("-"));
+			function getCanmel(str){
+				str = str.split("-");
+				var newStr = ''+str[0];
+				for(var i = 1; i < str.length; i++){
+					newStr += (str[i].charAt(0).toUpperCase()+str[i].substring(1));
+				}
+				return newStr;
+			}
+			console.log(getCanmel("get-elment-by-id"));
+			console.log([1,4,2,2,321,23,12,2,3].sort(sortNumber));
+			function sortNumber(a,b){
+//				return a-b;//顺序
+				return b-a;//倒序
+			}
+			
+			
+			var a =undefined , b =NaN;
+			console.log(a+b);
+//			var obj = ();
+//			var obj = //;
+			for(i=0, j=0; i<10, j<6; i++, j++){
+				k = i + j;
+			}
+			console.log(k);
+			
+			var arrr = [1,4,2,2,321,23,12,2,3].reverse();
+			console.log(arrr)
+			
+			var pattern = /efg/g;
+			console.log(pattern.exec("abcdefg")); 
+			
+			
+			var str = "asdfssaaasasasasaa";
+			function getCount(str){
+				var json = {};
+				for(var i = 0; i < str.length; i++){
+					if(json[str.charAt(i)]){
+						json[str.charAt(i)]++;
+					}else{
+						json[str.charAt(i)] = 1;
+					}
+				}
+				
+				var maxCount = 0;
+				var charcount;
+				for(var i in json){
+					if(json[i] > maxCount){
+						maxCount = json[i];
+						charcount = i;
+					}
+				}
+				console.log("出现次数最多的是:"+ charcount + ":"+maxCount+"次");
+				console.log(JSON.stringify(json));
+			}
+			getCount(str);
+			function getFun(){
+				console.log("同源策略：协议、域名、端口");
+				console.log("nothing is too difficult if you put your heart into it!");
+			}
+			//function(){}
+			
+			
+			//面向对象程序设计  类的概念
+			//对象字面量
+			//对象属性的分类：数据属性 和 访问器属性
+			
+			//创建对象
+			//1.工厂模式     不能判断对象的类型
+			function createObj(name,age,sex){
+				var o = new Object();
+				o.name = name;
+				o.age = age;
+				o.sex = sex;
+				return o;
+			}
+			var p1 = createObj("zhagnsan",234,"nan");
+			console.log(p1.name);
+			
+			//2.构造函数模式  constructor Func   将他的实例 标识为一种特定的类型
+			//问题：构造函数中的方法，每创建一个实例方法就会创建一次
+			function Func(name,age,sex){
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+				this.showName = function(){
+					alert(this.name);
+				}
+			}
+			var p2 = new Func("lisi",23,"nv");
+			console.log(p2.constructor);
+			
+			function Func2(name,age){
+				this.name = name;
+				this.age = age;
+				this.showName = showName;
+			}
+			function showName(){
+				alert(this.name);
+			}
+			//3.原型模式
+			//每一个函数都有一个prototype属性  这个属性是一个指针，指向一个对象，这个对象包含了包含了特定实例所共享的所有属性和方法
+			function Person3(){
+				
+			}
+			Person3.prototype.name = "wangwu";
+			Person3.prototype.age = 23;
+			Person3.prototype.sayName = function(){
+				alert(this.name);
+			}
+			
+			var p3 = new Person3();
+			console.log(JSON.stringify(Person3.prototype));
+			console.log(new Person3().sayName == new Person3().sayName);
+			console.log(Person3.prototype.constructor);//构造函数
+			console.log(Person3.prototype);//原型对象
+			console.log(p3.constructor);//
+			console.log(p3.__proto__ == Person3.prototype);//true  原型对象 
+			//4.组合使用构造函数模式和原型模式
+			function Person4(name,age){
+				this.name = name;
+				this.age = age;
+				this.arr = ["lisi","zhangsan"];
+			}
+			Person4.prototype = {
+				constructor:Person4,
+				showName : function(){
+					console.log(this.name);
+				}
+			}
+			var p4 = new Person4("zhangsan",234);
+			p4.showName();
+			
+			//5.动态原型模式  通过在构造函数中初始化原型  ------》不能使用对象字面量重写原型
+			//如果在创建了实例的情况下重写原型（对象字面量的方式），那么就会切断实例与新原型之间的联系
+			
+			function Person5(name,age,sex){
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+				
+				if(typeof this.showName != 'function'){
+					//方法不存在，初始化方法
+					Person5.prototype.showName = function(){
+						console.log(this.name)
+					}
+				}
+			}
+			
+			var p5 = new Person5("lisi",232,"man");
+			console.log(p5.name)
+			p5.showName();
+			
+			//6.寄生构造函数模式  与工厂模式类似
+			function Person6(name,age,sex){
+				var o = new Object();
+				o.name = name;
+				o.age = age;
+				o.sex = sex;
+				o.sayName = function(){
+					console.log(this.name);
+				}
+				return o;//默认情况下，可以不写return，返回的是o
+			}
+			
+			
+			//7.稳妥构造函数模式：没有公共属性、方法不引用this对象、安全环境下使用、不适用new操作符
+			function Person7(name,age){
+				var o = new Object();
+				o.name = name;
+				o.age = age;
+				o.sayName = function(){
+					console.log(name);
+				}
+				return o;
+			}
+			var p7= Person7("wangwu",87);
+			//只能通过sayName方法 获取name的值
+			p7.sayName();
+			console.log(p7.name)
+			
+			
+			//继承
+			//1.原型链
+			function SuperType(){
+				this.propery = true;
+			}
+			
+			SuperType.prototype.getSuperValue = function(){
+				return this.propery;
+			}
+			
+			function SubType(){
+				this.subProperty = false;
+			}
+			//原型链继承
+			SubType.prototype = new SuperType();
+			SubType.prototype.getSubValue = function(){
+				return this.subProperty;
+			}
+			//给子类原型添加方法，一定要放在替换原型的语句之后
+			var sub = new SubType();
+			console.log(sub.getSuperValue());
+			console.log(sub.propery);
+			console.log(sub.getSubValue());
+			//问题：原先实例属性的变成了现在的原型的属性了
+			
+			//2.借用构造函数   call apply
+			function SupType2(){
+				this.colors = ['red','green'];
+			}
+			
+			function SubType2(){
+				//继承了SupType2
+				SupType2.call(this);
+			}
+			var sub2 = new SubType2();
+			sub2.colors.push("yellow");
+			console.log(sub2.colors);//red,green,yellow
+			
+			var sub22 = new SubType2();
+			console.log(sub22.colors);//red,green
+			
+			//3.组合继承  (原型继承和借用构造函数继承)
+			function SupType3(name){
+				this.name = name;
+				this.colors = ["red","orange","green"];
+			}
+			SupType3.prototype.sayColor = function(){
+				console.log(this.colors);
+			}
+			
+			function SubType3(name,age){
+				SupType3.call(this,name);
+				this.age = age;
+			}
+			SubType3.prototype = new SupType3();
+			
+			var sub3 = new SubType3("lisi",34);
+			sub3.colors.push("yellow");
+			console.log(sub3.colors);
+			
+			var sub33 = new SubType3("wangwu",76);
+			console.log(sub33.colors);
+			//4.原型式继承
+			
+			//5.寄生式继承
+			
+			//6.寄生组合式继承
+			
+			//赋值变量值， 引用类型赋值，指针引用（相互影响）    基本类型赋值，副本（互不影响）
+			var num1 = 3;
+			var num2 = num1;
+			num2 = 4;
+			var obj1 = new Object();
+			var obj2 = obj1;
+			obj2.name = "zhangsan";
+			console.log(obj1.name)
+			
+			function getSum(num){
+				num += num;
+				return num;
+			}
+			function test(obj){
+				obj.name = "lisi";
+				obj = new Object();
+				obj.name = "gteay";
+			}
+			var te = new Object();
+			
+			//没有块级作用域
+			for(var i = 0; i < 2; i++){
+				console.log("nothing is too difficult if you put your heart into it!");
+				console.log("nothing is too difficult if you put your heart into it!");
+				console.log("nonting is too difficult if you put your heart into it!");
+				console.log("nothing is too difficult if you put your heart into it!");
+				console.log("nothing is too difficult if you put your heart into it!");
+				console.log("nothing is too difficult if you put your heart into it!");
+				console.log("nothing is too difficult if you put your heart into it!");
+				console.log("nothing is too difficult if you put your heart into it!");
+				console.HTMLOptGroupElement
+			}
+		</script>
+	</body>
+</html>

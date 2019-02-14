@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>赋值粘贴</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.goods{
+				margin-top:9px;
+				padding:0.64rem;
+				background-color: #fff;
+				position: relative;
+				display: none;
+			}
+			.goods .goods-num,#copy-num{
+				display: inline-block;
+				font-family: PingFangSC-Regular;
+				font-size: 13px;
+				color: #666666;
+				letter-spacing: 0;
+			}
+			.goods .copy{
+				font-family: PingFangSC-Regular;
+				font-size: 13px;
+				color: #E03634;
+				letter-spacing: 0;
+				float: right;
+			}
+			#copy-num{
+				border:none;
+				margin:0;
+				position:absolute;
+				padding:0;
+				max-width:10rem;
+				height:30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="goods">
+            	<!--<span class="goods-num">物流单号：<span id="copy-num">dfksdjfkdsjfkdsjfkds</span></span>-->
+            	<span class="goods-num">物流单号：</span>
+            	<textarea id="copy-num" disabled="disabled">sdfsdfsdfdsf</textarea>
+            	<span class="copy">复制</span>
+            	<!--<button onclick="copyText()">copy</button>-->
+            </div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

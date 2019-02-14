@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>高程3</title>
+	</head>
+	<body>
+		<button id="btn" happy="happy"></button>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			//函数表达式
+			var func = function f(num){
+				if(num <= 1){
+					return 1;
+				}else{
+					return num * f(num-1);
+				}
+			};
+			console.log(func(3));
+			(function(){
+				//模拟块级作用域
+			})();
+			
+			//私有变量  函数内定义的函数 、函数的参数、局部变量
+			//函数声明只能创建局部函数，而函数表达式可以创建全局函数
+			
+			
+			//BOM
+			console.log(window.screenLeft);
+			console.log(window.screenTop);
+			console.log(window.screenX);
+			var setId1 = setTimeout(function(){
+//				console.log("1");
+			},1000);
+			var setId = setTimeout(function(){
+//				console.log("2");
+			},999); 
+			console.log(setId1);
+			console.log(setId);
+			
+			for(var i = 1; i < 3; i++){
+				function fun(){
+					alert(i);
+				}
+			}
+			console.log(location.host);//服务器名称和端口号
+			console.log(location.hash);
+			console.log(location.hostname);//服务器名称
+			console.log(location.href);
+			console.log(location.origin);
+			console.log(location.protocol);
+			console.log(location.port);
+			console.log(location.search);
+			
+			//nodeType
+			console.log(document.getElementById("btn").nodeType);
+			console.log(document.getElementById("btn").nodeName);
+			console.log(document.getElementById("btn").nodeValue);
+			
+			console.log(document.readyState);
+			console.log(document.body);
+			console.log(document.compatMode);
+			console.log(document.charset);
+			console.log(document.defaultCharset);
+			console.log(document.getElementById("btn").getAttribute("happy"));
+			console.log("nothing is too difficult if you put your heart into it!");
+			//事件冒泡
+		</script>
+		
+		
+	</body>
+</html>
