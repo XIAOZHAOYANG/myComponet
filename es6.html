@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>es6</title>
+	</head>
+	<body>
+		
+		
+		
+		<script>
+			//let特点：
+			//1.不存在变量提升
+			//2.块级作用域（暂时性死区）---->变量一定要声明以后才能使用
+			{
+				let name = "zuoziyang";
+				var email = "@qq.com";
+			}
+			console.log("name:"+name);
+			console.log("email:"+email);
+			
+			
+			//const命令  声明一个只读常量，一旦声明，常量的值就不能改变
+			try{
+				 const PI = "3.14159628"
+				 console.log(PI);
+				 PI = 3;
+				 console.log(PI);
+			}catch(e){
+				//TODO handle the exception
+				console.log(e);// Assignment to constant variable.
+			}
+			
+			//ES6声明变量的六种方法
+			//var let const function import class
+			
+			//变量的结构赋值 ： 从数组和对象中提取值
+			//1.数组的结构赋值 
+			//特点：数组的元素是按次序排列的，变量的取值是由它的位置决定的
+			let [a,b,c] = [1,2,3];
+			console.log(a,b,c);
+			
+			
+			//2.对象的解构赋值
+			//特点：对象的属性没有次序，变量必须与属性同名，才能取到正确的值
+			let {names,emails} = {emails:"@qq.com", names:"zhangsan"};
+			console.log(emails,names);
+			
+			//3.字符串的结构赋值
+			let [e,f,g] = "efg";
+			console.log(e,f,g);
+			
+			//4.数值和布尔值的结构赋值
+			//结构赋值时，如果等号右边是数值或布尔值，则会先转化为对象
+			let {toString:s} = 123;
+			console.log(s);
+			
+			let {toString:ss} = true;
+			console.log(ss);
+			
+			//结构赋值的规则：
+			//只要等号右边的值不是对象或数值，就先将其转化为对象。
+			//由于undefined和null无法转化为对象，所以对他们进行结构赋值会报错
+			
+			//变量的结构赋值的用途
+			//1.变量交换位置
+			let [x,y] = [1,2];
+			[x,y] = [y,x];
+			console.log(x,y);
+			//2.从函数返回多个值
+			function example(){
+				return [1,2,3];
+			}
+			let [aa,bb,cc] = example();
+			console.log(aa,bb,cc);
+			//3.函数参数的定义
+			//eg
+			function ffff([x,y,z]){
+				
+			}
+			//4.提取json数据
+			let jsonData = {
+				id : 53,
+				status : "success",
+				data:[856,23432]
+			};
+			let {id,status,data:num} = jsonData;
+			console.log(id,status,num);
+			//5.函数参数的默认值
+			
+			//6.遍历Map结构
+			//任何部署了Iterator 接口的对象，都可以用 for.....of循环遍历。
+			//Map接口原生支持Iterator接口，配合变量的结构赋值，获取键名和键值
+			var map = new Map();
+			map.set("first","hello");
+			map.set("second","world");
+			for(let [key,value] of map){
+				console.log(key +" is:"+value);
+			}
+			for(let [key] of map){//只获取键名
+				console.log(key);
+			}
+			for(let [,value] of map){//只获取键值
+				console.log(value);
+			}
+			//7.输入模块的指定方法
+			 try{
+//			 	import {AppRegistry,Text} form 'react-native';
+			 }catch(e){
+			 	//TODO handle the exception
+			 }
+			 
+			 
+			 
+			 //函数的name 属性，返回函数的函数名
+			 function foo(){
+			 	console.log("函数的name属性，返回函数的函数名："+foo.name);//foo
+			 }
+			 foo();
+			 
+			 
+			 //箭头函数
+			 //ES6允许使用箭头(=>)定义函数
+			 var ff = v =>v;
+			 //等同于下面这个函数
+//			 var f = function(v){
+//			 	return v;
+//			 }
+			
+			//对象中函数的简洁表达方式
+			let perosn = {
+				name:"zhangsjfdk",
+				age:234,
+				sayName(){
+					return name;
+				}
+			}
+			
+			//在es5中 NaN不等于自身  +0 等于 -0
+			//es5缺乏一种运算，在所有环境中，只要两个值是一样的，它们就应该相等
+			//ES6提出同值相等算法，用来解决上面这个问题 。
+			//Object.is();---》它用来比较两个值是否严格相等，与严格比较运算符(===)基本一致
+			console.log(Object.is("foo","foo"));//true
+			console.log(Object.is({},{}));//false
+			//不同之处只有两个：一是+0不等于-0，二是NaN等于自身
+			console.log(-0 === +0);//true
+			console.log(NaN === NaN);//false
+			
+			console.log(Object.is(-0,+0));//false
+			console.log(Object.is(NaN,NaN));//true
+			
+			//对象的合并和赋值
+			//Object.assign方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象(target)
+			let breakfast = {};
+			Object.assign(breakfast,{drink:"beer"});
+			
+			//ES6提供了新的数据结构Set，它类似于数组，但是成员的值都是唯一的，没有重复的值
+			//Set本身是一个构造函数用来生成set数据结构
+			const set = new Set();
+			//可用于数组去重
+			[1,23,23,123,2,2,21,1,1].forEach(x => set.add(x));
+			for(let i of set){
+				console.log(i);
+			}
+//			console.log(Set.prototype.size);
+			
+			
+			//Promise 是异步编程的一种解决方案   比传统的解决方案---回调函数和事件  更合理和强大
+			//Promise的三种状态：pending(进行中)  Resolved(已完成，又称fulfilled)  Rejected(已失败)
+			//Promise的状态变化只有两种情况：1是从pending到Resolved  2是从pending到Rejected
+			//Promise的缺点
+			//1.无法取消Promise，一旦新建它就会立即执行，无法中途取消
+			//2.如何不设置回调函数，Promise内部抛出的错误，不会反应到外部
+			//3.当初与Pending状态时，无法得知目前进行到哪一阶段(刚刚才是还是即将完成)
+			
+			//Promise实例
+			var pro = new Promise(function(resolve,reject){
+				//some code
+				if(true){//异步操作成功
+					resolve(value);
+				}else{
+					reject(error);
+				}
+			});
+			
+			
+		</script>
+	</body>
+</html>
