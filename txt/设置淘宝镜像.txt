@@ -1,0 +1,4 @@
+root: C:\Users\1\AppData\Roaming\nvm
+path: C:\Program Files\nodejs
+node_mirror:http://npm.taobao.org/mirrors/node/
+npm_mirror:https://npm.taobao.org/mirrors/npm/
