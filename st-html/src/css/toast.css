@@ -1,0 +1,79 @@
+.st-toast {
+	position: fixed;
+	left: 50%;
+	top: 80px;
+	max-width: 300px;
+    display: table-row;
+	background-color: #fff;
+	background-clip: padding-box;
+	border-radius: 4px;
+	padding: 10px 15px;
+	-webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+    z-index: 888;
+    display: none;
+}
+.st-toast .st-toast-success,.st-toast .st-toast-error,.st-toast .st-toast-warning{
+    display: table-cell;
+    vertical-align: middle;
+}
+.st-toast .st-toast-success i,.st-toast .st-toast-error i,.st-toast .st-toast-warning i{
+    vertical-align: middle;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/st-icon.png');
+    background-repeat: no-repeat;
+    background-size: 246px 214px;
+}
+.st-toast .st-toast-success i{
+    background-position: -22px -130px;
+}
+.st-toast .st-toast-error i{
+    background-position: -53px -130px;
+}
+.st-toast .st-toast-warning i{
+    background-position: -89px -130px;
+}
+.st-toast .st-toast-text{
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+.toast span.st-toast-text {
+	background-color: #fff;
+}
+
+.zoom-big-leave-active {
+	-webkit-animation-name: antZoomBigOut;
+	animation-name: antZoomBigOut;
+	-webkit-animation-play-state: running;
+	animation-play-state: running;
+	pointer-events: none;
+}
+
+@-webkit-keyframes antZoomBigOut {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+
+	to {
+		opacity: 0;
+		-webkit-transform: scale(.8);
+		transform: scale(.8)
+	}
+}
+
+@keyframes antZoomBigOut {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+
+	to {
+		opacity: 0;
+		-webkit-transform: scale(.8);
+		transform: scale(.8)
+	}
+}

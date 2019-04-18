@@ -1,0 +1,66 @@
+/* 提示确认框样式   */
+.confirm-mode{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+.confirm-content{
+    position: absolute;
+    width: 420px;
+    left: 50%;
+    top: 30%;
+    margin-left: -210px;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.20);
+    border-radius: 4px;
+    background-color: #fff;
+}
+.confirm-header{
+    position: relative;
+    padding: 32px 32px 5px 69px;
+    font-size: 16px;
+    color: #1e1e1e;
+    line-height: 22px;
+}
+.confirm-header .confirm-type{
+    position: absolute;
+    left: 30px;
+    top: 28px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/st-icon.png');
+    background-repeat: no-repeat;
+    background-size: 246px 214px;
+}
+.confirm-header .st-confirm-success{
+    background-position: -19px -161px;
+}
+.confirm-header .st-confirm-error{
+    background-position: -63px -161px;
+}
+.confirm-header .st-confirm-warning{
+    background-position: -109px -161px;
+}
+.confirm-body{
+    padding: 10px 32px 15px 70px;
+}
+.confirm-body p{
+    color: #595959;
+    margin-top: 0px;
+    font-size: 14px;
+}
+.confirm-footer{
+    position: relative;
+    padding: 10px 32px 24px 32px;
+    float: right;
+}
+.confirm-footer .btn{
+    padding: 6px 18px;
+}
+.confirm-footer .confirm-define{
+    margin-left: 5px;
+}

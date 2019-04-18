@@ -1,0 +1,132 @@
+.input-select-check {
+	position: relative;
+}
+
+.input-select-check:after {
+	content: "";
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	vertical-align: middle;
+	border-top: 4px dashed;
+	border-top: 4px solid\9;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	margin-top: -2px;
+	vertical-align: middle;
+}
+
+.input-select-check input.form-control[readonly] {
+	background-color: #fff;
+}
+
+.input-select-check input {
+	cursor: pointer;
+	background-color: #fff;
+}
+
+.input-select-check-content {
+	position: absolute;
+	background-color: #fff;
+	z-index: 1000;
+	border: 1px solid #f5f5f5;
+	width: 100%;
+	max-height: 260px;
+    overflow-y: auto;
+}
+
+
+
+
+
+.ztree * {
+	font-size: 14px;
+}
+
+.ztree li a {
+	vertical-align: middle;
+}
+
+.ztree li span.button.switch {
+	width: 24px;
+	height: 24px;
+}
+
+.ztree li span.button.chk {
+	width: 20px;
+	height: 20px;
+}
+
+.ztree li span.button.roots_docu {
+	background-position: -86px -3px;
+}
+
+.ztree li span.button.center_docu {
+	background-position: -86px -29px;
+}
+
+.ztree li span.button.bottom_docu {
+	background-position: -86px -55px;
+}
+
+.ztree li span.button.bottom_open {
+	background-position: -140px -56px;
+}
+
+.ztree li span.button.bottom_close {
+	background-position: -113px -56px;
+}
+
+.ztree li span.button.center_close {
+	background-position: -113px -30px;
+}
+
+.ztree li span.button.center_open {
+	background-position: -140px -29px;
+}
+
+.ztree li span.button.chk.checkbox_false_full {
+	background-position: 0px 0px;
+}
+
+.ztree li span.button.chk.checkbox_false_full_focus {
+	background-position: 0px -21px;
+}
+
+.ztree li span.button.chk.checkbox_true_full {
+	background-position: -21px 0;
+}
+
+.ztree li span.button.chk.checkbox_true_full_focus {
+	background-position: -21px -21px;
+}
+
+.ztree li span.button.chk.checkbox_true_part {
+	background-position: -21px -42px;
+}
+
+.ztree li span.button.chk.checkbox_true_part_focus {
+	background-position: -21px -63px;
+}
+.ztree li span.button.chk.checkbox_false_part {
+    background-position: 0 -21px;
+}
+.ztree li span.button.chk.checkbox_false_part_focus {
+    background-position: -21px -21px;
+}
+.ztree li span.button.root_open {
+    background-position: -140px -83px;
+}
+.ztree li span.button.root_close {
+    background-position: -113px -83px;
+}
+.ztree li span.button.roots_close{
+    background-position: -113px 0;
+}
+.ztree li span.button.roots_open {
+    background-position: -140px 0;
+}

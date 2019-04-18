@@ -1,0 +1,30 @@
+{
+  "name": "kgj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "less": "gulp less",
+    "clean": "rimraf dist",
+    "build": "rimraf dist && gulp build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-less": "^3.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-template": "^5.0.0",
+    "gulp-uglify": "^2.0.0",
+    "jshint": "^2.9.4"
+  },
+  "dependencies": {
+    "gulp.spritesmith": "^6.9.0"
+  }
+}

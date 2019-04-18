@@ -6,3 +6,4 @@ vue：https://cn.vuejs.org/v2/guide/syntax.html
 
 富文本编辑器：https://github.com/fex-team/ueditor
 插件es6兼容性：https://caniuse.com
+jquery插件库：http://jq22.com

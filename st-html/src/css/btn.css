@@ -1,0 +1,91 @@
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus,a:focus{
+    outline: none;
+}
+.bootstrap-select .btn:focus{
+    outline: none!important;
+}
+.btn{
+    position: relative;
+}
+.btn-primary{
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
+.btn-primary:focus, .btn-primary:hover {
+    color: #fff;
+    background-color: #40a9ff;
+    border-color: #40a9ff;
+}
+
+[btn-animation]:after {
+	content: "";
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	bottom: -1px;
+	right: -1px;
+	border-radius: inherit;
+	border: 0 solid rgb(9, 109, 217);
+	opacity: .2;
+	-webkit-animation: fadeEffect 2s cubic-bezier(.08, .82, .17, 1), waveEffect .4s cubic-bezier(.08, .82, .17, 1);
+	animation: fadeEffect 2s cubic-bezier(.08, .82, .17, 1), waveEffect .4s cubic-bezier(.08, .82, .17, 1);
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	display: block;
+	pointer-events: none;
+}
+
+@-webkit-keyframes waveEffect {
+	to {
+		top: -6px;
+		left: -6px;
+		bottom: -6px;
+		right: -6px;
+		border-width: 6px
+	}
+}
+@keyframes waveEffect {
+	to {
+		top: -6px;
+		left: -6px;
+		bottom: -6px;
+		right: -6px;
+		border-width: 6px
+	}
+}
+
+@-webkit-keyframes fadeEffect {
+	to {
+		opacity: 0
+	}
+}
+
+@keyframes fadeEffect {
+	to {
+		opacity: 0
+	}
+}
+
+
+/* 导入按钮 */
+.st-file-import{
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+.st-file-import .st-file-import-btn {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	display: inline-block;
+	padding: 7px 15px;
+}
+
+.st-file-import .st-file-import-content input {
+	position: absolute;
+	height: 100%;
+	top: 0px;
+	right: 0px;
+	opacity: 0;
+	cursor: pointer;
+	filter: alpha(opacity=0);
+}

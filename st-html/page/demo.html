@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html class="page-bgcolor">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="renderer" content="webkit" />
+		<!-- 解决部分兼容性问题，如果安装了GCF，则使用GCF来渲染页面，如果未安装GCF，则使用最高版本的IE内核进行渲染。 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- 页面按原比例显示 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>demo</title>
+		<link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../dist/css/zTreeStyle.css" rel="stylesheet" />
+		<link href="../dist/css/base.min.css" rel="stylesheet" />
+		<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			h3 {
+				line-height: 40px;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bread-crumbs pl20">
+			<p><span>工作台</span>&ensp;/&ensp;<a href="">民主评议</a></p>
+			<h3>民主评议</h3>
+		</div>
+		<div class="subpage-container">
+			<h3>表格</h3>
+			<div>
+				<div class="st-form-layout">
+					<div class="st-form-item">
+						<span class="st-form-title">名称</span>
+						<div class="st-form-content st-form-screen">
+							<i></i>
+							<input type="text" class="form-control st-form-screen" placeholder="请输入名称搜索" />
+						</div>
+					</div>
+					<div class="st-form-item">
+						<span class="st-form-title">卡号</span>
+						<div class="st-form-content">
+							<input type="text" class="form-control" placeholder="请输入卡号搜索" />
+						</div>
+					</div>
+					<button class="btn btn-primary" type="button">添加</button>
+				</div>
+			</div>
+			<table class="table table-hover">
+				<tr>
+					<th>序列号</th>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>操作</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>熊大</td>
+					<td>12</td>
+					<td>
+						<a class="a_active mr10" href="javascript:void(0);">编辑</a>
+						<a class="a_active" href="javascript:void(0);">删除</a>
+					</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>熊二</td>
+					<td>10</td>
+					<td>
+						<a class="a_active mr10" href="javascript:void(0);">编辑</a>
+						<a class="a_active" href="javascript:void(0);">删除</a>
+					</td>
+				</tr>
+				<tr class='table-no-data'>
+					<td colspan='4'>
+						<img src='../dist/images/no-data.png' />
+						<p>暂无数据！</p>
+					</td>
+				</tr>
+			</table>
+			<div class="pagec" id="pagearea">
+				<div class="pagec-right">
+					<ul class="pagination mt10 mb10"></ul>
+				</div>
+			</div>
+			<h3 style="clear: both;">表单</h3>
+			<br />
+			<div class="group-item mb15">
+				<span class="group-item-title">角色名称</span>
+				<div class="group-item-content">
+					<input type="text" class="form-control" />
+				</div>
+			</div>
+			<div class="group-item mb15">
+				<span class="group-item-title">角色名称</span>
+				<div class="group-item-content">
+					<textarea class="form-control"></textarea>
+				</div>
+			</div>
+			<div class="group-item mb15">
+				<span class="group-item-title">角色名称</span>
+				<div class="group-item-content">
+					<input type="text" class="form-control" />
+				</div>
+			</div>
+			<div class="group-item mb15">
+				<span class="group-item-title">上传图片</span>
+				<div class="group-item-content">
+					<div class="st-file-updata">
+						<div class="st-file-updata-content" data-accept="image/jpeg,image/png,image/jpg" data-multiple='false'>
+							<div class="st-file-updata-btn"><i></i><span>上传图片</span></div>
+							<input type="file" accept="image/jpeg,image/png,image/jpg" />
+						</div>
+						<ul class="st-file-content" id="typeImg"></ul>
+					</div>
+				</div>
+			</div>
+			<div class="group-item mb15">
+				<span class="group-item-title group-required">角色名称</span>
+				<div class="group-item-content">
+					<div class="st-radio">
+						<input type="radio" disabled="disabled" id="radioId" name="ssss" value="1" />
+						<label for="radioId">
+							单选禁用
+						</label>
+					</div>
+					<div class="st-radio">
+						<input type="radio" disabled="disabled" checked="checked" id="radioId1" name="ssss" value="2" />
+						<label for="radioId1">
+							单选选中禁用
+						</label>
+					</div>
+					<div class="st-radio">
+						<input type="radio" id="radioId2" name="ssss" value="3" />
+						<label for="radioId2">
+							单选选择1
+						</label>
+					</div>
+					<div class="st-radio">
+						<input type="radio" id="radioId3" name="ssss" value="4" />
+						<label for="radioId3">
+							单选选择2
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="group-item mb15">
+				<span class="group-item-title group-required">角色名称</span>
+				<div class="group-item-content">
+					<div class="st-checkbox">
+						<input type="checkbox" disabled="disabled" id="checkboxId" value="1" />
+						<label for="checkboxId">
+							多选禁用
+						</label>
+					</div>
+					<div class="st-checkbox">
+						<input type="checkbox" checked="checked" disabled="disabled" id="checkboxId2" value="2" />
+						<label for="checkboxId2">
+							多选选中禁用
+						</label>
+					</div>
+					<div class="st-checkbox">
+						<input type="checkbox" id="checkboxId3" value="3" />
+						<label for="checkboxId3">
+							多选选择1
+						</label>
+					</div>
+					<div class="st-checkbox">
+						<input type="checkbox" id="checkboxId4" value="4" />
+						<label for="checkboxId4">
+							多选选择2
+						</label>
+					</div>
+				</div>
+			</div>
+			<!-- 单选 -->
+			<h3>单选</h3>
+			<div class="st-radio">
+				<input type="radio" disabled="disabled" id="radioId" name="ssss" value="1" />
+				<label for="radioId">
+					单选禁用
+				</label>
+			</div>
+			<div class="st-radio">
+				<input type="radio" disabled="disabled" checked="checked" id="radioId1" name="ssss" value="2" />
+				<label for="radioId1">
+					单选选中禁用
+				</label>
+			</div>
+			<div class="st-radio">
+				<input type="radio" id="radioId2" name="ssss" value="3" />
+				<label for="radioId2">
+					单选选择1
+				</label>
+			</div>
+			<div class="st-radio">
+				<input type="radio" id="radioId3" name="ssss" value="4" />
+				<label for="radioId3">
+					单选选择2
+				</label>
+			</div>
+
+			<!-- 多选 -->
+			<h3>多选</h3>
+			<div class="st-checkbox">
+				<input type="checkbox" disabled="disabled" id="checkboxId" value="1" />
+				<label for="checkboxId">
+					多选禁用
+				</label>
+			</div>
+			<div class="st-checkbox">
+				<input type="checkbox" checked="checked" disabled="disabled" id="checkboxId2" value="2" />
+				<label for="checkboxId2">
+					多选选中禁用
+				</label>
+			</div>
+			<div class="st-checkbox">
+				<input type="checkbox" id="checkboxId3" value="3" />
+				<label for="checkboxId3">
+					多选选择1
+				</label>
+			</div>
+			<div class="st-checkbox">
+				<input type="checkbox" id="checkboxId4" value="4" />
+				<label for="checkboxId4">
+					多选选择2
+				</label>
+			</div>
+			<h3>图片上传</h3>
+			<div>
+				<div class="st-file-updata">
+					<div class="st-file-updata-content" data-accept="image/jpeg,image/png,image/jpg,image/gif,image/word" data-multiple='false'>
+						<div class="st-file-updata-btn"><i></i><span>上传图片</span></div>
+						<input type="file" accept="image/jpeg,image/png,image/jpg,image/gif,image/word" />
+					</div>
+					<ul class="st-file-content" id="typeImg"></ul>
+				</div>
+			</div>
+			<!-- 时间选择 -->
+			<h3>日期选择</h3>
+			<div style="width: 300px;">
+				<p>日期选择</p>
+				<input type="text" class="form-control" id="test03" placeholder="YYYY-MM-DD">
+			</div>
+
+			<div style="width: 300px;">
+				<p>日期选择带时间</p>
+				<input type="text" class="form-control" id="testblue" placeholder="YYYY-MM-DD hh:mm:ss">
+			</div>
+			<br>
+			<!-- 下拉多选 -->
+			<h3>下拉多选</h3>
+			<p>单选选择</p>
+			<select class="selectpicker">
+				<option>Mustard</option>
+				<option>Ketchup</option>
+				<option>Relish</option>
+			</select>
+			<p>多选选择</p>
+			<select id="id_select" class="selectpicker bla bla bli" multiple data-live-search="true">
+				<option>cow</option>
+				<option>bull</option>
+				<option>ASD</option>
+				<option selected>Bla</option>
+				<option>Ble</option>
+			</select>
+			<p>分类选择</p>
+			<select class="selectpicker">
+				<optgroup label="Picnic">
+					<option>Mustard</option>
+					<option>Ketchup</option>
+					<option>Relish</option>
+				</optgroup>
+				<optgroup label="Camping">
+					<option>Tent</option>
+					<option>Flashlight</option>
+					<option>Toilet Paper</option>
+				</optgroup>
+			</select>
+			<p>
+				data-live-search 开启实时搜索<br> data-tokens 关键字 提高其可搜索性
+			</p>
+			<select class="selectpicker" data-live-search="true">
+				<option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+				<option data-tokens="mustard">Burger, Shake and a Smile</option>
+				<option data-tokens="frosting">Sugar, Spice and all things nice</option>
+			</select>
+			<p>title在选择选项时，在各个选项上设置属性以显示替代文本：</p>
+			<select class="selectpicker">
+				<option title="Combo 1">Hot Dog, Fries and a Soda</option>
+				<option title="Combo 2">Burger, Shake and a Smile</option>
+				<option title="Combo 3">Sugar, Spice and all things nice</option>
+			</select>
+
+			<div class="pre input-select-check" style="width: 300px;">
+				<input type="text" readonly class="form-control" />
+				<div class="input-select-check-content" style="display: none;">
+					<ul id="treeId" class="ztree"></ul>
+				</div>
+			</div>
+
+
+
+
+
+			<h3>按钮</h3>
+			<div>
+				<button class="btn btn-default" type="button">Button</button>
+				<button class="btn btn-primary" type="button">Button</button>
+				<button class="btn btn-success" type="button">Button</button>
+				<button class="btn btn-info" type="button">Button</button>
+				<button class="btn btn-warning" type="button">Button</button>
+				<button class="btn btn-danger" type="button">Button</button>
+				<div class="st-file-import vm">
+					<div class="st-file-import-content">
+						<div class="st-file-import-btn"><i></i><span>导入</span></div>
+						<input type="file" accept="application/json" />
+					</div>
+				</div>
+			</div>
+
+			<h3>模态框</h3>
+			<!-- 模态框开始 -->
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">modal</button>
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">标题标题标题</h4>
+						</div>
+						<div class="modal-body">
+							<p>内容内容内容...</p>
+							<p>内容内容内容...</p>
+							<p>内容内容内容...</p>
+							<p>内容内容内容...</p>
+							<p>内容内容内容...</p>
+							<p>内容内容内容...</p>
+							<p>内容内容内容...</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<h3>确认框</h3>
+			<!-- 确认框开始 -->
+			<button class="btn btn-primary" id="confirm">confirm</button>
+
+			<h3>toast</h3>
+			<button class="btn btn-success" id="success">成功提示</button>
+			<button class="btn btn-warning" id="warning">警告提示</button>
+			<button class="btn btn-danger" id="error">错误提示</button>
+		</div>
+
+	</body>
+	<script src="../dist/js/jquery.min.js" type="text/javascript"></script>
+	<script src="../dist/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../dist/js/base.min.js" type="text/javascript"></script>
+	<script src="../dist/js/jquery.ztree.all.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var pagearea;
+		ccccc();
+
+		function ccccc() {
+			pagearea = $("#pagearea").createPage({
+				totalPage: Math.ceil(88 / 10),
+				currPageSize: 10,
+				currPage: 1,
+				backFn: function(currPage, currPageSize) {
+					pagearea({
+						totalPage: Math.ceil(88 / 10),
+						currPageSize: currPageSize,
+						currPage: currPage
+					});
+					App.toast.show("第" + currPage + "页,每页" + currPageSize + "条", 'success', 1000);
+				}
+			});
+		}
+// 		App.confirm = function(o) {
+// 			var op = {
+// 				el: ""
+// 			};
+// 			var parameter = $.extend(op, o);
+// 			var html = $('<input type="file" class="upFile" /><ul></ul>');
+// 			$(op.el).append(html);
+// 			// 上传图片
+// 			$(op.el).on("change", ".upFile", function(e) {
+// 				$(op.el + " ul").append($("<li><img src='' /><p></p><i></i></li>").append($(this).clone().removeClass("upFile")));
+// 				$(this).val("");
+// 			});
+// 			// 删除图片
+// 			$(op.el).on("click", "ul li i", function(e) {
+// 				$(this).parent().remove();
+// 			});
+// 			var setFile = function() {
+// 				console.log(this);
+// 			}
+// 			var getFile = function() {
+// 				console.log(this);
+// 			}
+// 			var delFile = function() {
+// 				console.log(this);
+// 			}
+// 			var _list = {
+// 				el: op.el,
+// 				setFile: setFile,
+// 				getFile: getFile
+// 			};
+// 			return _list;
+// 		}
+// 		var adds = App.confirm({
+// 			"el": ".st-up-file"
+// 		});
+// 		adds.setFile();
+
+		// 确认框
+		$("body").on("click", "#confirm", function() {
+			App.confirm({
+				"title": "温馨提示",
+				"text": "确定删除？",
+				"callback": function(item) {
+					console.log("您选择了确定！");
+				},
+				"type": "warning"
+			});
+		});
+		// toast 消息提示
+		$("body").on("click", "#success", function() {
+			App.toast.show("提交成功！", 'success', 2000000);
+		});
+		$("body").on("click", "#warning", function() {
+			App.toast.show("警告提示！", 'warning', 2000000);
+		});
+		$("body").on("click", "#error", function() {
+			App.toast.show("输入错误,请稍后再试！", 'error', 2000000);
+		});
+
+		var setting = {
+			check: {
+				enable: true,
+				chkboxType: {
+					"Y": "",
+					"N": ""
+				}
+			},
+			view: {
+				dblClickExpand: false,
+				showIcon: false
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				beforeClick: beforeClick,
+				onCheck: onCheck
+			}
+		};
+
+		function beforeClick(treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj("treeId");
+			zTree.checkNode(treeNode, !treeNode.checked, null, true);
+			return false;
+		}
+
+		function onCheck(e, treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj("treeId"),
+				nodes = zTree.getCheckedNodes(true),
+				v = "";
+			for (var i = 0, l = nodes.length; i < l; i++) {
+				v += nodes[i].name + ",";
+			}
+			if (v.length > 0) v = v.substring(0, v.length - 1);
+			$(e.target).parents('.input-select-check').children("input").attr("value", v);
+		}
+
+
+		var zNodes = [{
+				id: 1,
+				pId: 0,
+				name: "北京"
+			},
+			{
+				id: 2,
+				pId: 0,
+				name: "天津"
+			},
+			{
+				id: 3,
+				pId: 0,
+				name: "上海"
+			},
+			{
+				id: 6,
+				pId: 0,
+				name: "重庆"
+			},
+			{
+				id: 4,
+				pId: 0,
+				name: "河北省",
+				open: true
+			},
+			{
+				id: 41,
+				pId: 4,
+				name: "石家庄"
+			},
+			{
+				id: 42,
+				pId: 4,
+				name: "保定"
+			},
+			{
+				id: 43,
+				pId: 4,
+				name: "邯郸"
+			},
+			{
+				id: 44,
+				pId: 4,
+				name: "承德"
+			},
+			{
+				id: 5,
+				pId: 0,
+				name: "广东省",
+				open: true,
+				nocheck: true
+			},
+			{
+				id: 51,
+				pId: 5,
+				name: "广州"
+			},
+			{
+				id: 52,
+				pId: 5,
+				name: "深圳"
+			},
+			{
+				id: 53,
+				pId: 5,
+				name: "东莞"
+			},
+			{
+				id: 54,
+				pId: 5,
+				name: "佛山"
+			},
+			{
+				id: 6,
+				pId: 0,
+				name: "福建省",
+				open: true
+			},
+			{
+				id: 61,
+				pId: 6,
+				name: "福州"
+			},
+			{
+				id: 62,
+				pId: 6,
+				name: "厦门"
+			},
+			{
+				id: 63,
+				pId: 6,
+				name: "泉州"
+			},
+			{
+				id: 64,
+				pId: 6,
+				name: "三明"
+			}
+		];
+
+		$(function() {
+			$(document).on("click", ".input-select-check input", function(e) {
+				$(this).nextAll(".input-select-check-content").stop().slideToggle();
+			});
+			$("body").on("click", function(e) {
+				if ($(e.target).closest(".input-select-check").length <= 0) {
+					$(".input-select-check .input-select-check-content").stop().slideUp();
+				}
+			});
+
+			$.fn.zTree.init($("#treeId"), setting, zNodes);
+			// 下拉选择
+			$('.selectpicker').selectpicker({
+				'selectedText': 'cat'
+			});
+			// 时间选择
+			jeDate("#test03", {
+				theme: {
+					bgcolor: "#1890FF",
+					color: "#ffffff",
+					pnColor: "#CCCCCC"
+				},
+				format: "YYYY-MM-DD"
+			});
+
+			//自定义主题色
+			jeDate("#testblue", {
+				theme: {
+					bgcolor: "#1890FF ",
+					color: "#ffffff",
+					pnColor: "#CCCCCC"
+				},
+				format: "YYYY-MM-DD hh:mm:ss"
+			});
+		});
+	</script>
+
+</html>

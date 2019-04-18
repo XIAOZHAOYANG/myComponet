@@ -1,0 +1,236 @@
+/* 页面背景颜色 */
+.page-bgcolor{
+    background-color: #F0F2F5;
+}
+.subpage-container{
+    margin: 24px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.btn{
+    padding: 6px 15px;
+}
+.bread-crumbs{
+	background-color: #fff;
+}
+.bread-crumbs p{
+	color: #8C8C8C;
+	padding-top: 15px;
+}
+.bread-crumbs p a{
+	color: #595959;
+}
+.bread-crumbs p a:hover{
+	text-decoration: underline;
+}
+.bread-crumbs h3{
+	line-height: 50px;
+	font-size: 20px;
+	color: #262626;
+}
+/* table 筛选 */
+.st-form-item {
+    display: inline-block;
+    padding-right: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 33%;
+    padding-left: 70px;
+}
+.st-form-item.pl0{
+    padding-left: 0px;
+}
+.st-form-item.w90{
+    padding-left: 90px;
+}
+.st-form-item.w90 .st-form-title{
+    width: 90px;
+}
+.st-form-item.w100{
+    padding-left: 100px;
+}
+.st-form-item.w100 .st-form-title{
+    width: 100px;
+}
+.st-form-item.w110{
+    padding-left: 110px;
+}
+.st-form-item.w110 .st-form-title{
+    width: 110px;
+}
+.st-form-item.w120{
+    padding-left: 120px;
+}
+.st-form-item.w120 .st-form-title{
+    width: 120px;
+}
+.st-form-title {
+    line-height: 34px;
+    padding-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+    position: absolute;
+    left: 0px;
+}
+
+.st-form-content {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.st-form-content .btn-group.bootstrap-select{
+	margin-bottom: 0px;
+}
+
+.st-form-content.wauto {
+    width: auto;
+}
+
+.st-form-content.st-form-screen {
+    position: relative;
+}
+.st-form-content.st-form-screen i{
+    width: 20px;
+    height: 20px;
+    left: 9px;
+    top: 7px;
+    display: inline-block;
+    position: absolute;
+    background-image: url('../images/st-icon.png');
+    background-size:246px 214px;
+    background-repeat: no-repeat;
+    background-position: -122px -130px;
+}
+.st-form-content.st-form-screen input{
+    padding-left: 35px;
+}
+.table .st-checkbox input[type=checkbox]+label{
+    padding-left: 15px;
+    margin-bottom: 0px;
+}
+.table .a_active{
+    color: #2196F3;
+    display: inline-block;
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+.table-hover>tbody>tr.table-no-data:hover{
+    background-color: #fff;
+}
+.table-hover>tbody>tr.table-no-data td{
+    padding: 50px 0px 60px 0px;
+    text-align: center;
+}
+.table-hover>tbody>tr.table-no-data td p{
+    color: #aaa;
+    font-size: 16px;
+    padding-top: 20px;
+}
+
+/* bootstrap 样式重写 */
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 12px 20px;
+    border-top: none;
+    vertical-align: middle;
+}
+
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>th {
+    padding: 13px 20px;
+}
+
+.table tr th {
+    background-color: #FAFAFA;
+}
+.pagination>li>a, .pagination>li>span{
+	padding: 6px 12px;
+	min-width: 36px;
+	text-align: center;
+}
+.pagination>li>a:focus, .pagination>li>a:hover{
+	background-color: transparent;
+	color: #2196f3;
+}
+.pagination>li>span{
+	color: #999;
+}
+.pagination>li>span:focus, .pagination>li>span:hover{
+	background-color: transparent;
+	color: #999;
+}
+.pagination>li>a.active{
+	background-color: #2196f3;
+	color: #fff;
+	border-top: 1px solid #2196f3;
+	border-bottom: 1px solid #2196f3;
+}
+
+
+.modal-content {
+    -webkit-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.20);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.20);
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        -webkit-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.20);
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.20);
+    }
+}
+
+.glyphicon-ok:before {
+    content: '';
+    background-color: #000000;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+/* 滚动条样式 */
+*::scrollbar {
+    width: 8px;
+    height: 8px;
+    box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    box-sizing: border-box;
+}
+*::scrollbar-thumb{
+    background-color: #999;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb{
+    background-color: #999;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+*::scrollbar-thumb:vertical:hover{
+    background-color: #666;
+}
+*::-webkit-scrollbar-thumb:vertical:hover{
+    background-color: #666;
+}
+*::scrollbar-thumb:vertical:active{
+    background-color: #555;
+}
+*::-webkit-scrollbar-thumb:vertical:active{
+    background-color: #555;
+}
+*::scrollbar-button{
+    display: none;
+}
+*::-webkit-scrollbar-button{
+    display: none;
+}

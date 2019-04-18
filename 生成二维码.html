@@ -44,7 +44,6 @@
 		<script src="js/JsBarcode.all.min.js"></script>
 		<script>
 			var arr = "2018-12-05 13:49:56".split(" ");
-			alert(arr[0]);
 			alert("2018-12-05 13:49:56".substring(0,11));
 			//二维码
 			$(function(){
@@ -56,6 +55,7 @@
 			    	$('#qrcode').qrcode("<p style='color:red;'>this is a paragraph</p>");
 			    },4000);
 			});
+			//一维码
 			JsBarcode("#jsbarcode","11213131",{
 				displayValue:"false"
 			});

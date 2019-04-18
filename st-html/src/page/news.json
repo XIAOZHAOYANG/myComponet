@@ -1,0 +1,51 @@
+{
+	"pageName": "news",
+	"delList": {
+		"isDel": true,
+		"paramName": "id",
+		"delURL": "/news/delNews",
+		"prompt": "您确定删除此新闻？"
+	},
+	"addList": {
+		"isAdd": true,
+		"goURL": "/news/add",
+		"paramName": "id"
+	},
+	"editList": {
+		"isEdit": true,
+		"goURL": "/news/edit",
+		"paramName": "id"
+	},
+	"tableURL": "/news/getList",
+	"navList": [{
+		"name": "新闻管理"
+	}, {
+		"name": "新闻列表"
+	}],
+	"inquiryList": [{
+		"title": "标题",
+		"placeholder": "请输入标题",
+		"param": "title"
+	}],
+	"tableList": [{
+		"columnName": "标题",
+		"columnParam": "title",
+		"isDate": false,
+		"isMoney": false
+	}, {
+		"columnName": "客户端",
+		"columnParam": "typ",
+		"isDate": false,
+		"isMoney": false
+	}, {
+		"columnName": "排序",
+		"columnParam": "orderId",
+		"isDate": false,
+		"isMoney": false
+	}, {
+		"columnName": "阅读数",
+		"columnParam": "readNum",
+		"isDate": false,
+		"isMoney": false
+	}]
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="page-bgcolor">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="renderer" content="webkit" />
+		<!-- 解决部分兼容性问题，如果安装了GCF，则使用GCF来渲染页面，如果未安装GCF，则使用最高版本的IE内核进行渲染。 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- 页面按原比例显示 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title><%=navList[navList.length-1].name%></title>
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../css/zTreeStyle.css" rel="stylesheet" />
+		<link href="../../css/base.min.css" rel="stylesheet" />
+		<!--[if lt IE 9]>
+            <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+        <div>
+            <div class="bread-crumbs pl20 pr20">
+                <p><% for(var i in navList){%><%if (i!=navList.length-1) {%><span><%=navList[i].name%></span>&ensp;/&ensp;<%}%><%}%>
+                <h3><%=navList[navList.length-1].name%></h3>
+            </div>
+            <div class="subpage-container">
+                <div class="st-form-layout">
+                    <%for(var i in inquiryList){%><div class="st-form-item">
+                        <span class="st-form-title"><%=inquiryList[i].title%></span>
+                        <div class="st-form-content st-form-screen">
+                            <i></i>
+                            <input type="text" class="form-control st-form-screen" id="<%=inquiryList[i].param%>Id" placeholder="<%=inquiryList[i].placeholder%>" />
+                        </div>
+                    </div>
+                    <%}%><%if (addList.isAdd) {%><div class="st-form-item pl0">
+                        <a class="btn btn-primary" href="<%=addList.goURL%>" >新增</a>
+                    </div><%}%>
+                </div>
+                <div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <%for(var i in tableList){%><th><%=tableList[i].columnName%></th>
+                                    <%}%><th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableId"></tbody>
+                    </table>
+                    <div class="pagec ovh" id="pagearea">
+                        <div class="pagec-right">
+                            <ul class="pagination mt10 mb10"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script id="templateId" type="text/tmpl">
+            {{if list && list.length>0}}
+                {{each list as item }}
+                    <tr>
+                        <%for(var i in tableList){%><td>{{item.<%=tableList[i].columnParam%><%if (tableList[i].isDate) {%> | dateTimeConvert<%}%> <%if (tableList[i].isMoney) {%> | moneyConvert<%}%> }}</td>
+                        <%}%><td>
+                            <%if (editList.isEdit) {%><a class="a_active mr10" href="<%=editList.goURL%>?id={{item.<%=editList.paramName%>}}">编辑</a><%}%>
+                            <%if (delList.isDel) {%><a class="a_active mr10" onclick="delItem('{{item.<%=delList.paramName%>}}')" href="javascript:void(0);">删除</a><%}%>
+                        </td>
+                    </tr>
+                {{/each}}
+            {{else}}
+                <tr class='table-no-data'>
+                    <td colspan='<%=tableList.length+1%>'>
+                        <img src='/static/images/no-data.png' />
+                        <p>暂无数据！</p>
+                    </td>
+                </tr>
+            {{/if}}
+        </script>
+	</body>
+	<script src="../../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../js/base.min.js" type="text/javascript"></script>
+    <script src="../../js/template.js" type="text/javascript"></script>
+    <script src="../../pageJs/<%=pageName%>/list.js" type="text/javascript"></script>
+</html>
