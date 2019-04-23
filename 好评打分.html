@@ -6,6 +6,7 @@
 		<title>好评打分</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
+		
 	</head>
 	<div class="mui-content" style="padding:20px">
 		<img src="img/star_gray.png" alt="" />
@@ -22,7 +23,7 @@
 			for(var i = 0; i < img.length;i++){
 				img[i].index = i;
 			}
-			$("body").on("tap","img",function(){
+			$("body").on("click","img",function(){
 				$("img").prop("src","img/star_gray.png");
 //				var len = this.index;//自定义获取元素的索引
 				var len = $(this).index();

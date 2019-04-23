@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>xmlHttpRequest</title>
+	</head>
+	<body>
+		
+		
+		<button id="btn">
+			加载
+		</button>
+		<script>
+			var url = "http://wuliangye.scshangtong.com/puhuihua/app/userInfo/userInfo";
+			var token = "1ce4b28622b34388ab162d903f3438e8_app"
+			var phone = "15882074636"
+			var param = "token=1ce4b28622b34388ab162d903f3438e8_app&phone=15882074636"
+//			var xhr = new XMLHttpRequest();
+//			console.log(xhr);
+			document.getElementById("btn").onclick = function(){
+				myAjax()
+			}
+			function myAjax(){
+				var xhr = null;
+				if(window.XMLHttpRequest){
+					xhr = new XMLHttpRequest();
+				}else{
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xhr.onreadystatechange = state_Change;
+				xhr.open("POST",url,true);
+				xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+				xhr.send(param);
+				function state_Change(){
+					//readyState 的五个值及表示的意义
+					//0：初始化状态，XMLHttpRequest对象创建或被abort()方法重置(及取消所有请求)
+					//1：open()方法已调用，但send()方法还没有别调用 。请求还没有被发送
+					//2：send()方法已调用，http请求已发送到web服务器，但还没有收到响应
+					//3：所有响应头还没有接收到，响应提开始接收但未完成
+					//4：http响应已经完全接收
+					if(xhr.readyState == 4){
+						if(xhr.status == 200){
+							console.log("请求成功");
+							console.log(JSON.parse(xhr.response));
+							console.log(xhr)
+						}else{
+							console.log("请求失败");
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
