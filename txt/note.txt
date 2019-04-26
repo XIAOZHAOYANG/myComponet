@@ -8,3 +8,6 @@ vue：https://cn.vuejs.org/v2/guide/syntax.html
 富文本编辑器：https://github.com/fex-team/ueditor
 插件es6兼容性：https://caniuse.com
 jquery插件库：http://jq22.com
+MDN
+ES6学习地址：http://es6.ruanyifeng.com/
+webService对接接口:https://blog.csdn.net/sf2gis2/article/details/50332507
