@@ -11,3 +11,4 @@ jquery插件库：http://jq22.com
 MDN
 ES6学习地址：http://es6.ruanyifeng.com/
 webService对接接口:https://blog.csdn.net/sf2gis2/article/details/50332507
+webstorm激活码：http://idea.iblue.me
