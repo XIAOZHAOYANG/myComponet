@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js 继承</title>
+	</head>
+	<body>
+		
+		<script>
+			/*
+			 * es5继承
+			 */
+			//1.原型链实现继承：利用原型让一个引用类型继承另一个引用类型的属性和方法，即让原型对象等于另一个类型的实例
+			//子类原型对象 = 父类的一个实例
+			//缺点：包含引用类型值的原型，他会被所有实例所共享
+			//      创造子类型的实例时，不能向超类型的构造函数中传递参数
+			
+			function SuperType(){
+				this.property = true;
+			}
+			SuperType.prototype.getSuperValue = function(){
+				return this.property;
+			}
+			function SubType(){
+				this.subProperty = false;
+			}
+			//实现继承
+			console.dir(SubType);
+			SubType.prototype = new SuperType();
+			console.dir(SubType);
+			SubType.prototype.getSubValue = function(){
+				return this.subProperty;
+			};
+			var instance = new SubType();
+			console.log(instance.getSuperValue());
+			
+			
+			/*
+			 * 借用构造函数：
+			 * 在子类构造函数内部调用超类型构造函数，通过call()和apply()方法可以
+			 * 
+			 * 优点: 1.可以传递参数
+			 * 缺点：1.方法都定义在构造函数中，函数无法复用
+			 * 		2.
+			 */
+			function SuperType2(){
+				this.colors = ["red","green","blue"];
+			}
+			function SubType2(){
+				SuperType2.call(this);
+			}
+			var instance2 = new SubType2();
+			instance2.colors.push("yello");
+			console.log(instance2.colors)
+			console.dir(SubType2);
+			
+			/*
+			 * 原型链继承+借用构造函数继承=组合继承
+			 * 缺点：无论在什么情况下都会调用两次超类型的构造函数，一次是在创建子类型原型的时候，一次是在是子类型构造函数内部
+			 * 
+			 * 
+			 */
+			
+			
+			/*
+			 * 原型式继承
+			 * 
+			 */
+			function object(o){
+				function F(){};
+				F.prototype = o;
+				return new F();
+			}
+			
+			var arr = [1,2,3,2,3234,34,3];
+			var flag = true;
+			var count = 0;
+			
+			for(var i = 0; i < arr.length-1; i++){
+				for(var j = 0; j < arr.length-1; j++){
+					if(arr[j] > arr[j+1]){
+						var temp = arr[j];
+						arr[j] = arr[j+1];
+						arr[j+1] = temp;
+						flag = true;
+					}
+				}
+				if(flag){
+					count++;
+					flag = false;				
+				}else{
+					break;
+				}
+			}
+			console.log(arr);
+			console.log(count);
+			
+			//1 1 2 3 5 8 13 21
+			console.log(getNum(8));
+			function getNum(n){
+				if(n > 2){
+					var temp;
+					var num1 = 1;
+					var num2 = 1;
+					for(var i =2 ; i < n;i++){
+						temp = num2;
+						num2 = num1+num2;
+						num1 = temp; 
+					}
+					return num2;
+				}else{
+					return 1;
+				}
+			}
+		</script>
+	</body>
+</html>

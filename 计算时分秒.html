@@ -3,19 +3,79 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style type="text/css">
+			#toastBtn{
+				padding:5px 10px;
+				background-color: green;
+				color: #fff;
+			}
+			#toast_modal{
+				padding: 0 20px;
+				position: fixed;
+				border-radius: 5px;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+				background: #000000;
+				display: none;
+			}
+			#toast_modal p{
+				color: #fff;
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body>
-		
+		<!--toast-->
+		<button type="button" id="toastBtn">Toast按钮</button>
+		<div id="toast_modal">
+			<p>toast模板</p>
+		</div>
+		<!--时间-->
+		<h1 id="Time"></h1>
 		<script>
-			function formatDuring(mss) {
-			  var days = parseInt(mss / (1000 * 60 * 60 * 24));
-			  var hours = parseInt((mss % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			  var minutes = parseInt((mss % (1000 * 60 * 60)) / (1000 * 60));
-			  var seconds = (mss % (1000 * 60)) / 1000;
-			  return days + " 天 " + hours + " 小时 " + minutes + " 分钟 " + seconds + " 秒 ";
+			//toast提示
+			var toastBtn = document.getElementById("toastBtn");
+			var toastModal = document.getElementById("toast_modal");
+			toastBtn.onclick= function(){
+				toastBtn.disabled = true;
+				toastModal.style.display = "block";
+				setTimeout(function(){
+					toastModal.style.display = "none";
+					toastBtn.disabled = false;
+				},3000);
+			};
+			
+			//计算时间
+			function formatDuring(diff) {
+				//计算出相差天数 
+			    var days=Math.floor(diff/(24*3600*1000)); 
+			    //计算出小时数 
+			    var leave1=diff%(24*3600*1000);    //计算天数后剩余的毫秒数 
+			    var hours=Math.floor(leave1/(3600*1000)); 
+			    //计算相差分钟数 
+			    var leave2=leave1%(3600*1000);        //计算小时数后剩余的毫秒数 
+			    var minutes=Math.floor(leave2/(60*1000)); 
+			    //计算相差秒数 
+			    var leave3=leave2%(60*1000);      //计算分钟数后剩余的毫秒数 
+			    var seconds=Math.round(leave3/1000); 
+			    var returnStr = seconds + "秒"; 
+			    if(minutes>0) { 
+			        returnStr = minutes + "分" + returnStr; 
+			    } 
+			    if(hours>0) { 
+			        returnStr = hours + "小时" + returnStr; 
+			    } 
+			    if(days>0) { 
+			        returnStr = days + "天" + returnStr; 
+			    } 
+			    return returnStr; 
 			}
-			console.log(formatDuring(1));
-			console.log("nothing is too difficult if you put your heart into it!")
+			setInterval(function(){
+				var currentTime = new Date().getTime();
+				var futureTime = new Date("2019-11-11").getTime();
+				document.getElementById("Time").innerHTML ="距离光棍节还有:"+ formatDuring(futureTime-currentTime);
+			},1000);
 		</script>
 	</body>
 </html>

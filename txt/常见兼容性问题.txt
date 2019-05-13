@@ -1,0 +1,10 @@
+一.css
+1.不同浏览器的margin padding  (margin:0;padding:0;)
+2.浮动ie产生双倍margin  ==》_display:inline;(只有ie6会识别)
+3.margin重合问题
+二.js
+1.document.body.scroll  || document.documentElement.scroll
+2.even || window.event
+3.addEvenListener || attachEvent
+4.e.pagex e.pagey  || e.x e.y
+5.

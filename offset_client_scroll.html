@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>offet client scroll</title>
+		<style>
+			body{
+				margin:0;
+			}
+			#wrap1{
+				margin: 20px 0 0 20px;
+				padding:10px;
+				border: 10px solid red;
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap1">
+			
+		</div>
+		
+		<script>
+			/*
+			 * 1.offset
+			 * offsetWidth border+padding+content
+			 * offsetHeight border+padding+content
+			 * offsetTop 
+			 * offsetLeft
+			 */
+			var wrap1 = document.getElementById("wrap1");
+			console.log(wrap1.offsetWidth);//10*2+10*2
+			console.log(wrap1.offsetHeight);
+			console.log(wrap1.offsetTop);
+			console.log(wrap1.offsetLeft);
+			
+			/*
+			 * 2.client
+			 * clientWidth padding+content
+			 * clientHeight padding+content
+			 * clientTop  border
+			 * clientLeft border
+			 */
+			console.log(wrap1.clientWidth);
+			console.log(wrap1.clientHeight);
+			console.log(wrap1.clientTop);
+			console.log(wrap1.clientLeft);
+			
+			/*
+			 *3.scroll
+			 * scrollWidth
+			 * scrollHeight
+			 * scrollTop
+			 * scrollLeft
+			 * */
+			console.dir(wrap1.scrollWidth);
+			console.dir(wrap1.scrollHeight);
+			console.dir(wrap1.scrollTop);
+			console.dir(wrap1.scrollLeft);
+		</script>
+	</body>
+</html>
